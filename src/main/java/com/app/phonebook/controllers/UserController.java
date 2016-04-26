@@ -78,7 +78,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/register", method = RequestMethod.POST)
-    public String registerPost(@Valid User user, BindingResult result) {
+    public String registerPost(User user, BindingResult result) {
         if (result.hasErrors()) {
             return "user/register";
         }
@@ -195,7 +195,7 @@ public class UserController {
         user.setId(u.getId());
         user.setUserName(u.getUserName());
         user.setAddress(u.getAddress());
-        user.setMobilePhone(u.getMobilePhone());
+        //user.setMobilePhone(u.getMobilePhone());
         user.setEmail(u.getEmail());
         user.setFirstName(u.getFirstName());
         user.setLastName(u.getLastName());

@@ -1,6 +1,5 @@
 package com.app.phonebook.models;
 
-import com.app.phonebook.validation.Phone;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.Entity;
@@ -18,7 +17,7 @@ public class User {
     private Long id;
     
     @NotNull
-    @Size(min = 5, max = 40, message = "Username must at least 5 characters.")
+    @Size(min = 5, max = 40, message = "Login must at least 5 characters.")
     @Valid
     private String userName;
     
@@ -37,28 +36,26 @@ public class User {
     
     private String role = "ROLE_USER";
 
-    @NotNull
-    @Size(min = 5, max = 40, message = "firstName must at least 5 characters.")
-    @Valid
+
     private String firstName;
 
-    @NotNull
-    @Size(min = 5, max = 40, message = "LastName must at least 5 characters.")
-    @Valid
     private String lastName;
     
     private String address;
 
-    @Phone
-    private String mobilePhone;
-
-    @Phone
-    private String homePhone;
-    
     private String lastLogin;
     
     private String profilePicture;
-    
+
+    public User(String userName, String password, String email) {
+        this.userName = userName;
+        this.password = password;
+        this.email = email;
+    }
+
+    public User() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -139,21 +136,6 @@ public class User {
         this.address = address;
     }
 
-    public String getMobilePhone() {
-        return mobilePhone;
-    }
-
-    public void setMobilePhone(String mobilePhone) {
-        this.mobilePhone = mobilePhone;
-    }
-
-    public String getHomePhone() {
-        return homePhone;
-    }
-
-    public void setHomePhone(String homePhone) {
-        this.homePhone = homePhone;
-    }
 
     public String getLastLogin() {
         return lastLogin;

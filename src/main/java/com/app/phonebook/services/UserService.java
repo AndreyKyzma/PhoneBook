@@ -153,8 +153,8 @@ public class UserService implements UserDetailsService {
                 newData.getEmail(), 
                 newData.getFirstName(), 
                 newData.getLastName(), 
-                newData.getAddress(), 
-                newData.getMobilePhone());
+                newData.getAddress());
+
     }
     
     public User getLoggedInUser() {

@@ -10,7 +10,7 @@ public class PhoneConstraintValidator implements ConstraintValidator<Phone, Stri
 
     @Override
     public void initialize(Phone phone) {
-        //To change body of implemented methods use File | Settings | File Templates.
+
     }
 
     @Override
@@ -18,7 +18,7 @@ public class PhoneConstraintValidator implements ConstraintValidator<Phone, Stri
         if(phoneField == null) {
             return false;
         }
-        return phoneField.matches("[0-9()-\\.]*");
+        return phoneField.matches("^\\+\\d{3}\\(\\d{2}\\)\\d{7}$");
     }
 
 }

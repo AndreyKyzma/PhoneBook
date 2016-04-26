@@ -1,6 +1,6 @@
 package com.app.phonebook.models;
 
-import com.app.phonebook.validation.Phone;
+
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.*;

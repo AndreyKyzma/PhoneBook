@@ -195,7 +195,6 @@ public class UserController {
         user.setId(u.getId());
         user.setUserName(u.getUserName());
         user.setAddress(u.getAddress());
-        //user.setMobilePhone(u.getMobilePhone());
         user.setEmail(u.getEmail());
         user.setFirstName(u.getFirstName());
         user.setLastName(u.getLastName());

@@ -5,10 +5,79 @@
 </head>
 <body>
     <div layout:fragment="content">
-        <h1>Welcome to Phonebook</h1>
-        Todo Logic phonebook
-        <p>Check out the sample @RestController <a href="/sample/json">SampleController.java</a> but create some data first <a href="/sample/create?name=test">SampleController.java</a></p>
-        <div id="created" th:text="${#dates.format(date)}">May 11, 2015</div>
+        <h1 class="welcome" th:text="'Welcome, ' + ${g_user} + '!'"></h1>
+        <div class="header">
+            <div class="container-fluid nav-bar">
+                <div class="container">
+
+                    <!--<div class="dropdown nav-button">-->
+                        <!--<button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">-->
+                            <!--Menu-->
+                            <!--<span class="caret"></span>-->
+                        <!--</button>-->
+                        <!--<ul class="dropdown-menu" aria-labelledby="dropdownMenu">-->
+                            <!--<li><a href="/phoneBook/add">Add Contacts</a></li>-->
+                        <!--</ul>-->
+
+    </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="container">
+                <div class="row form-bg-title">
+                    <!--Your PhoneBook List-->
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <input type="text" class="filter form-control" placeholder="Find by First Name * Last Name * Mobile Phone" />
+                    </div>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <table class="table table-hover table-bordered phone-table">
+                            <thead>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last Name</th>
+                            <th>Mobile Phone</th>
+                            <th>Home Phone</th>
+                            <th>Address</th>
+                            <th>E-mail</th>
+                            <!--Edit delete-->
+                            <th>DO IT</th>
+
+                            </thead>
+                            <tbody>
+                            <tr th:each="phone : ${phones}" >
+                                <td th:text="${phone.lastName}" class="for-search">lastName</td>
+                                <td th:text="${phone.firstName}" class="for-search">firstName</td>
+                                <td th:text="${phone.middleName}">middleName</td>
+                                <td th:text="${phone.mobilePhone}" class="for-search">mobilePhone</td>
+                                <td th:text="${phone.homePhone}">homePhone</td>
+                                <td th:text="${phone.address}">address</td>
+                                <td th:text="${phone.email}">email</td>
+                                <td>
+                                    <a th:href="${'/phoneBook/edit/' + phone.id}" class="btn btn-info">Edit</a>
+                                    <a th:id="${phone.id}" th:onclick="'deletePhone(\'' + ${phone.id} + '\')'" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--<p>Check out the sample @RestController <a href="/sample/json">SampleController.java</a> but create some data first <a href="/sample/create?name=test">SampleController.java</a></p>-->
+        <div id="created" th:text="${#dates.format(date)}">April 26, 2016</div>
     </div>
 </body>
 </html>

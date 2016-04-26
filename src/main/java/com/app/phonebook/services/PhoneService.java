@@ -1,12 +1,12 @@
 package com.app.phonebook.services;
 
-import com.app.phonebook.models.Sample;
+import com.app.phonebook.models.PhoneBookRecord;
 import com.app.phonebook.repositories.PhoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PhoneService extends CrudService<Sample, PhoneRepository> {
+public class PhoneService extends CrudService<PhoneBookRecord, PhoneRepository> {
 
     @Autowired
     @Override
@@ -15,7 +15,7 @@ public class PhoneService extends CrudService<Sample, PhoneRepository> {
     }
 
     @Override
-    public Sample copy(Sample from, Sample to) {
+    public PhoneBookRecord copy(PhoneBookRecord from, PhoneBookRecord to) {
         to = from;
         return to;
     }

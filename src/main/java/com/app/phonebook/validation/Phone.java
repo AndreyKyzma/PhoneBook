@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 @Target( { ElementType.METHOD, ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Phone {
-    String message() default "{Sample}";
+    String message() default "{PhoneBookRecord}";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

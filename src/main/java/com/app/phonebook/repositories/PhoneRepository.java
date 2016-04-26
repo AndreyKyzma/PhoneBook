@@ -1,8 +1,8 @@
 package com.app.phonebook.repositories;
 
-import com.app.phonebook.models.Sample;
+import com.app.phonebook.models.PhoneBookRecord;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PhoneRepository extends CrudRepository<Sample, Long> {
+public interface PhoneRepository extends CrudRepository<PhoneBookRecord, Long> {
 
 }

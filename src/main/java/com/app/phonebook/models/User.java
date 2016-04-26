@@ -1,11 +1,9 @@
 package com.app.phonebook.models;
 
+import com.app.phonebook.validation.Phone;
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -46,6 +44,7 @@ public class User {
     private String lastLogin;
     
     private String profilePicture;
+
 
     public User(String userName, String password, String email) {
         this.userName = userName;
@@ -135,7 +134,6 @@ public class User {
     public void setAddress(String address) {
         this.address = address;
     }
-
 
     public String getLastLogin() {
         return lastLogin;

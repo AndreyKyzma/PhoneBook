@@ -36,16 +36,5 @@ public class PhoneBookController {
         mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
     }
 
-//    @Test
-//    public void deletePage() throws Exception {
-//        User user = new User("someLogin", "somePassword", "someFullName");
-//        Long id = 5L;
-//
-//        when(service.delete(id, user.getLastLogin())).thenReturn(id);
-//
-//        mockMvc.perform(post("/phoneBook/delete")
-//                .sessionAttr("login", "someLogin")
-//                .param("phoneId", "5"))
-//                .andExpect(content().string("5"));
-//    }
+
 }

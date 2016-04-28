@@ -24,7 +24,6 @@ public class PhoneController {
     @Autowired
     private PhoneService service;
 
-
     @RequestMapping("/listrecord")
     public String getListRecord(ModelMap map) {
         Iterable<PhoneBookRecord> records = this.phoneRepository.findAll();
@@ -40,9 +39,9 @@ public class PhoneController {
     }
 
 
-    @RequestMapping(value = "/addrecord", method = RequestMethod.POST)
-    public String addRecord(HttpSession session,@Valid PhoneBookRecord record) {
-    record.setHomePhone(record.getHomePhone());
+    @RequestMapping(value = "addrecord", method = RequestMethod.POST)
+    public String addRecord(HttpSession session, @Valid PhoneBookRecord record) {
+        record.setHomePhone(record.getHomePhone());
         record.setLastName(record.getLastName());
         record.setFirstName(record.getFirstName());
         record.setMobilePhone(record.getMobilePhone());
@@ -50,6 +49,7 @@ public class PhoneController {
         record.setEmail(record.getEmail());
         record.setMiddleName(record.getMiddleName());
 
+        service.addRecord(record);
         return "/phonebook/listrecord";
     }
 

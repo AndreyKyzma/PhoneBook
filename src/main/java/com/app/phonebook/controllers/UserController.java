@@ -155,11 +155,11 @@ public class UserController {
         }
     }
 
-    @RequestMapping("/user/delete")
-    public String delete(Long id) {
-        userService.delete(id);
-        return "redirect:/user/list";
-    }
+//    @RequestMapping("/user/delete")
+//    public String delete(Long id) {
+//        userService.delete(id);
+//        return "redirect:/user/list";
+//    }
 
     @RequestMapping("/user/activate")
     public String activate(String activation) {

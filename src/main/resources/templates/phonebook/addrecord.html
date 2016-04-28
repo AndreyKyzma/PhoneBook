@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="layout">
+<head>
+    <title> Add Contact</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <form class="form-signin" th:action="@{/addrecord}" th:object="${phonebook}" method="post">
+
+
+        <input type="text" th:field="*{email}" class="form-control top" placeholder="Email" required="required"
+               autofocus="autofocus"/>
+        <input type="text" th:field="*{address}" class="form-control middle" placeholder="Address"/>
+        <input type="text" th:field="*{mobilePhone}" class="form-control middle" placeholder="Mobile Phone format +3(000)"/>
+        <input type="text" th:field="*{homePhone}" class="form-control middle" placeholder="Home Phone"/>
+        <input type="text" th:field="*{firstName}" class="form-control middle" placeholder="First Name"/>
+        <input type="text" th:field="*{lastName}" class="form-control middle" placeholder="Last Name"/>
+        <input type="text" th:field="*{middleName}" class="form-control middle" placeholder="Middle Name"/>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+
+        <p class="alert alert-success" th:if="${#httpServletRequest.getParameter('updated')}">You changes have been
+            saved</p>
+    </form>
+
+</div>
+</body>
+</html>

@@ -14,12 +14,12 @@ public class User {
     @Id
     private Long id;
     
-    @NotNull
+//    @NotNull
     @Size(min = 5, max = 40, message = "Login must at least 5 characters.")
     @Valid
     private String userName;
     
-    @NotNull
+//    @NotNull
     @Size(min = 5, max = 100, message = "Password must at least 5 characters.")
     private String password;
     
@@ -27,7 +27,7 @@ public class User {
     private String confirmPassword;
     
     @Email(message = "Email address is not valid.")
-    @NotNull
+//    @NotNull
     private String email;
     
     private String token;

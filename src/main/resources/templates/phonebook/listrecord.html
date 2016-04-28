@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+layout:decorator="layout">
+<head>
+<title>List Record</title>
+</head>
+<body>
+<div layout:fragment="content">
+<h1>List Record</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-hover table-bordered phone-table">
+                <thead>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Mobile Phone</th>
+                <th>Home Phone</th>
+                <th>Address</th>
+                <th>E-mail</th>
+                </thead>
+                <tbody>
+                <tr th:each="record : ${records}" >
+                    <td th:text="${record.lastName}" class="for-search">lastName</td>
+                    <td th:text="${record.firstName}" class="for-search">firstName</td>
+                    <td th:text="${record.middleName}">middleName</td>
+                    <td th:text="${record.mobilePhone}" class="for-search">mobilePhone</td>
+                    <td th:text="${record.homePhone}">homePhone</td>
+                    <td th:text="${record.address}">address</td>
+                    <td th:text="${record.email}">email</td>
+                    <td>
+                        <!--<a th:href="${'/phoneBook/edit/' + phone.id}" class="btn btn-info">Edit</a>-->
+                        <!--<a th:id="${phone.id}" th:onclick="'deletePhone(\'' + ${phone.id} + '\')'" class="btn btn-danger">Delete</a>-->
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

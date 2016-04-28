@@ -73,7 +73,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
-    public String register(User user) {
+    public String register(@Valid User user) {
         return "user/register";
     }
 

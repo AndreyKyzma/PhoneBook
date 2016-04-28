@@ -27,6 +27,7 @@ public class ApplicationSecurityAdapter extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+        .antMatchers("/phonebook/*").permitAll()
         .antMatchers("/user/register").permitAll()
         .antMatchers("/user/activate").permitAll()
         .antMatchers("/user/activation-send").permitAll()
